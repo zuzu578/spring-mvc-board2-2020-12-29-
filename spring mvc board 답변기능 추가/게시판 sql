@@ -1,0 +1,15 @@
+create sequence board_seq;
+drop sequence board_seq;
+create table board(
+    board_num number(38),
+    userid varchar2(500),
+    boardtopic varchar2(80),
+    rdate date default sysdate,
+    nClick number(8),
+    board_comment varchar2(999)
+);
+drop table board;
+select * from board;
+insert into board(board_num,userid,boardtopic,nClick,board_comment)
+values(board_seq.nextval,'apple1004','질문있습니다.','0','마음에 드는 작품을 구매할 수 있을까요?');                                         
+commit;    
